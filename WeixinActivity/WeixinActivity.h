@@ -11,6 +11,8 @@
 #import "WeixinTimelineActivity.h"
 #import "WeixinSessionActivity.h"
 
+#define kWXAppID @"wx62f8597bac2c57b3"
+
 @interface WeixinActivity : NSObject
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#define kWBAppKey @"2461571812"
 
 @interface SinaWeiboActivity : UIActivity{
     
