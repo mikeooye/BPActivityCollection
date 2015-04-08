@@ -42,14 +42,12 @@
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
 {
-    if ([WeiboSDK isWeiboAppInstalled] && [WeiboSDK isCanShareInWeiboAPP]) {
-        for (id activityItem in activityItems) {
-            if ([activityItem isKindOfClass:[UIImage class]]) {
-                return YES;
-            }
-            if ([activityItem isKindOfClass:[NSURL class]]) {
-                return YES;
-            }
+    for (id activityItem in activityItems) {
+        if ([activityItem isKindOfClass:[UIImage class]]) {
+            return YES;
+        }
+        if ([activityItem isKindOfClass:[NSURL class]]) {
+            return YES;
         }
     }
     return NO;
@@ -72,6 +70,7 @@
 
 - (void)performActivity
 {
+    /*
     WBSendMessageToWeiboRequest *req = [WBSendMessageToWeiboRequest request];
     req.message = [WBMessageObject message];
     req.message.text = title;
@@ -85,6 +84,12 @@
         req.message.imageObject.imageData = UIImageJPEGRepresentation(image, 0.75);
     }
     [WeiboSDK sendRequest:req];
+     */
+    
+    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+    authRequest.redirectURI = @"https://api.weibo.com/oauth2/default.html";
+    authRequest.scope = @"all";
+    [WeiboSDK sendRequest:authRequest];
     [self activityDidFinish:YES];
 }
 @end

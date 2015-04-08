@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#define kWBAppKey @"2461571812"
+#define kWBAppKey @"3951331094"
+#define kWBAppSecret @"ba833b7da2d9ca1a5593734c2302af9d"
+#define kWBRedirectURI @"https://api.weibo.com/oauth2/default.html"
 
 @interface SinaWeiboActivity : UIActivity{
     
