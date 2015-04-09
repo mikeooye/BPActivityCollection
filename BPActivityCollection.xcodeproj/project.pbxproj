@@ -40,6 +40,8 @@
 		047A7BD31A9DC28A004343E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047A7BD21A9DC28A004343E6 /* QuartzCore.framework */; };
 		04CDB9271AA496C300B65843 /* SinaWeiboActivityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDB9261AA496C300B65843 /* SinaWeiboActivityHandler.m */; };
 		04CDB92A1AA496DE00B65843 /* WeixinActivityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDB9291AA496DE00B65843 /* WeixinActivityHandler.m */; };
+		2865E9991AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E9981AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m */; };
+		2865E99D1AD6AADF00E86EA0 /* BPToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E99C1AD6AADF00E86EA0 /* BPToast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,10 @@
 		04CDB9281AA496DE00B65843 /* WeixinActivityHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeixinActivityHandler.h; sourceTree = "<group>"; };
 		04CDB9291AA496DE00B65843 /* WeixinActivityHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeixinActivityHandler.m; sourceTree = "<group>"; };
 		04CDB92B1AA4975C00B65843 /* prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
+		2865E9971AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBAuthorizeResponse+NSUserDefaults.h"; sourceTree = "<group>"; };
+		2865E9981AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WBAuthorizeResponse+NSUserDefaults.m"; sourceTree = "<group>"; };
+		2865E99B1AD6AADF00E86EA0 /* BPToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPToast.h; sourceTree = "<group>"; };
+		2865E99C1AD6AADF00E86EA0 /* BPToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,8 @@
 				047A7B501A9DB137004343E6 /* AppDelegate.m */,
 				047A7B521A9DB137004343E6 /* ViewController.h */,
 				047A7B531A9DB137004343E6 /* ViewController.m */,
+				2865E99B1AD6AADF00E86EA0 /* BPToast.h */,
+				2865E99C1AD6AADF00E86EA0 /* BPToast.m */,
 				047A7B551A9DB137004343E6 /* Main.storyboard */,
 				047A7B581A9DB137004343E6 /* Images.xcassets */,
 				047A7B5A1A9DB137004343E6 /* LaunchScreen.xib */,
@@ -215,6 +223,8 @@
 				047A7B7F1A9DB15B004343E6 /* SinaWeiboActivity.m */,
 				04CDB9251AA496C300B65843 /* SinaWeiboActivityHandler.h */,
 				04CDB9261AA496C300B65843 /* SinaWeiboActivityHandler.m */,
+				2865E9971AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.h */,
+				2865E9981AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m */,
 			);
 			path = WeiboActivity;
 			sourceTree = "<group>";
@@ -397,6 +407,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				047A7B971A9DB15B004343E6 /* SinaWeiboActivity.m in Sources */,
+				2865E99D1AD6AADF00E86EA0 /* BPToast.m in Sources */,
+				2865E9991AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m in Sources */,
 				047A7BA31A9DB15B004343E6 /* WeixinSessionActivity.m in Sources */,
 				047A7B541A9DB137004343E6 /* ViewController.m in Sources */,
 				04CDB92A1AA496DE00B65843 /* WeixinActivityHandler.m in Sources */,

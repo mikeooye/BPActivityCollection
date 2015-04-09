@@ -8,6 +8,8 @@
 
 #import "SinaWeiboActivityHandler.h"
 #import "WeiboSDK.h"
+#import "WBAuthorizeResponse+NSUserDefaults.h"
+#import "BPToast.h"
 
 @interface SinaWeiboActivityHandler ()<WeiboSDKDelegate>
 
@@ -66,22 +68,9 @@
         WBAuthorizeResponse *authResp = (WBAuthorizeResponse *)response;
         WeiboSDKResponseStatusCode code = response.statusCode;
         if (code == WeiboSDKResponseStatusCodeSuccess) {
-            NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-            [userInfo setObject:authResp.userID forKey:@"userID"];
-            [userInfo setObject:authResp.accessToken forKey:@"accessToken"];
-            [userInfo setObject:[_dateFormatter stringFromDate:authResp.expirationDate] forKey:@"expirationDate"];
-            [userInfo setObject:authResp.refreshToken forKey:@"refreshToken"];
             
-            NSError *error = nil;
-            NSData *wbAuthData = [NSJSONSerialization dataWithJSONObject:userInfo options:NSJSONWritingPrettyPrinted error:&error];
-            if (wbAuthData) {
-                [[NSUserDefaults standardUserDefaults] setObject:wbAuthData forKey:@"wbAuthData"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"SSO Success" message:nil preferredStyle:UIAlertControllerStyleAlert];
-                [alert addAction:[UIAlertAction actionWithTitle:@"okay" style:UIAlertActionStyleDefault handler:nil]];
-                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
-            }
+            [authResp saveToUserDefaults];
+            [@"Auth Successed" toast];
         }
     }
 }

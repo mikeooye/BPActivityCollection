@@ -8,6 +8,9 @@
 
 #import "SinaWeiboActivity.h"
 #import "WeiboSDK.h"
+#import "WBAuthorizeResponse+NSUserDefaults.h"
+#import "WBHttpRequest+WeiboShare.h"
+#import "BPToast.h"
 
 @implementation SinaWeiboActivity
 
@@ -70,26 +73,53 @@
 
 - (void)performActivity
 {
-    /*
-    WBSendMessageToWeiboRequest *req = [WBSendMessageToWeiboRequest request];
-    req.message = [WBMessageObject message];
-    req.message.text = title;
-    
+    NSString *text = nil;
+    WBImageObject *imgObj = nil;
+
+    text = title;
     if (url) {
-        req.message.text = [req.message.text stringByAppendingFormat:@"%@", url.absoluteString];
+        text = [text stringByAppendingFormat:@"%@", url.absoluteString];
     }
     
     if (image) {
-        req.message.imageObject = [WBImageObject object];
-        req.message.imageObject.imageData = UIImageJPEGRepresentation(image, 0.75);
+        imgObj = [WBImageObject object];
+        imgObj.imageData = UIImageJPEGRepresentation(image, 0.75);
     }
+/*
+    WBSendMessageToWeiboRequest *req = [WBSendMessageToWeiboRequest request];
+    req.message = [WBMessageObject message];
+    req.message.text = text;
+    req.message.imageObject = imgObj;
     [WeiboSDK sendRequest:req];
-     */
+*/
     
-    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
-    authRequest.redirectURI = @"https://api.weibo.com/oauth2/default.html";
-    authRequest.scope = @"all";
-    [WeiboSDK sendRequest:authRequest];
-    [self activityDidFinish:YES];
+    WBAuthorizeResponse *auth = [WBAuthorizeResponse objectFromUserDefaults];
+    if (auth.accessToken && [auth.expirationDate compare:[NSDate date]] == NSOrderedDescending) {
+
+        [WBHttpRequest requestForShareAStatus:text
+                                                 contatinsAPicture:imgObj
+                                                      orPictureUrl:nil
+                                                   withAccessToken:auth.accessToken
+                                                andOtherProperties:nil
+                                                             queue:[NSOperationQueue mainQueue]
+                                             withCompletionHandler:^(WBHttpRequest *httpRequest, id result, NSError *error) {
+                                                 
+                                                 if (error == NO) {
+                                                     [@"Share Successed" toast];
+                                                 }else{
+                                                     
+                                                     [error.localizedDescription toast];
+                                                 }
+                                             }];
+        [self activityDidFinish:YES];
+    }else{
+        
+        WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+        authRequest.redirectURI = @"https://api.weibo.com/oauth2/default.html";
+        authRequest.scope = @"all";
+        [WeiboSDK sendRequest:authRequest];
+        [self activityDidFinish:YES];
+    }
 }
+
 @end
