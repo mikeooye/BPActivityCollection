@@ -62,12 +62,20 @@
                                                            delegate:nil
                                                   cancelButtonTitle:@"确认" otherButtonTitles: nil];
         [alertView show];
+        return;
     }
-    if ([response isMemberOfClass:[WBAuthorizeResponse class]]) {
+    
+    WeiboSDKResponseStatusCode code = response.statusCode;
+    if (code == WeiboSDKResponseStatusCodeSuccess) {
         
-        WBAuthorizeResponse *authResp = (WBAuthorizeResponse *)response;
-        WeiboSDKResponseStatusCode code = response.statusCode;
-        if (code == WeiboSDKResponseStatusCodeSuccess) {
+        WBAuthorizeResponse *authResp = nil;
+        if ([response isMemberOfClass:[WBAuthorizeResponse class]]) {
+            authResp = (WBAuthorizeResponse *)response;
+        }else if (response.authResponse){
+            authResp = response.authResponse;
+        }
+        
+        if (authResp) {
             
             [authResp saveToUserDefaults];
             [@"Auth Successed" toast];

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "WeixinActivity.h"
+#import "SinaWeiboHttpActivity.h"
 #import "SinaWeiboActivity.h"
 
 @interface ViewController () {
@@ -23,7 +24,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    activity = @[[[WeixinSessionActivity alloc] init], [[WeixinTimelineActivity alloc] init], [[SinaWeiboActivity alloc] init]];
+    activity = @[[[WeixinSessionActivity alloc] init],
+                 [[WeixinTimelineActivity alloc] init],
+                 [[SinaWeiboActivity alloc] init],
+                 [[SinaWeiboHttpActivity alloc] init]];
 }
 
 - (void)didReceiveMemoryWarning

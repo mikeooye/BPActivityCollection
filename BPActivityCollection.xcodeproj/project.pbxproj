@@ -42,6 +42,8 @@
 		04CDB92A1AA496DE00B65843 /* WeixinActivityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDB9291AA496DE00B65843 /* WeixinActivityHandler.m */; };
 		2865E9991AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E9981AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m */; };
 		2865E99D1AD6AADF00E86EA0 /* BPToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E99C1AD6AADF00E86EA0 /* BPToast.m */; };
+		2865E9A01AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E99F1AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m */; };
+		2865E9A31AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E9A21AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,10 @@
 		2865E9981AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WBAuthorizeResponse+NSUserDefaults.m"; sourceTree = "<group>"; };
 		2865E99B1AD6AADF00E86EA0 /* BPToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPToast.h; sourceTree = "<group>"; };
 		2865E99C1AD6AADF00E86EA0 /* BPToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPToast.m; sourceTree = "<group>"; };
+		2865E99E1AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboBaseActivity.h; sourceTree = "<group>"; };
+		2865E99F1AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboBaseActivity.m; sourceTree = "<group>"; };
+		2865E9A11AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboHttpActivity.h; sourceTree = "<group>"; };
+		2865E9A21AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboHttpActivity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,8 +225,12 @@
 			isa = PBXGroup;
 			children = (
 				047A7B721A9DB15B004343E6 /* Resources */,
+				2865E99E1AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.h */,
+				2865E99F1AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m */,
 				047A7B7E1A9DB15B004343E6 /* SinaWeiboActivity.h */,
 				047A7B7F1A9DB15B004343E6 /* SinaWeiboActivity.m */,
+				2865E9A11AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.h */,
+				2865E9A21AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.m */,
 				04CDB9251AA496C300B65843 /* SinaWeiboActivityHandler.h */,
 				04CDB9261AA496C300B65843 /* SinaWeiboActivityHandler.m */,
 				2865E9971AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.h */,
@@ -409,6 +419,7 @@
 				047A7B971A9DB15B004343E6 /* SinaWeiboActivity.m in Sources */,
 				2865E99D1AD6AADF00E86EA0 /* BPToast.m in Sources */,
 				2865E9991AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m in Sources */,
+				2865E9A01AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m in Sources */,
 				047A7BA31A9DB15B004343E6 /* WeixinSessionActivity.m in Sources */,
 				047A7B541A9DB137004343E6 /* ViewController.m in Sources */,
 				04CDB92A1AA496DE00B65843 /* WeixinActivityHandler.m in Sources */,
@@ -417,6 +428,7 @@
 				047A7BA11A9DB15B004343E6 /* WeixinActivity.m in Sources */,
 				047A7B4E1A9DB137004343E6 /* main.m in Sources */,
 				047A7BA21A9DB15B004343E6 /* WeixinActivityBase.m in Sources */,
+				2865E9A31AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.m in Sources */,
 				04CDB9271AA496C300B65843 /* SinaWeiboActivityHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
