@@ -13,6 +13,7 @@
 #import "WeixinActivityHandler.h"
 #import "SinaWeiboActivity.h"
 #import "SinaWeiboActivityHandler.h"
+#import "QQActivityHandler.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,7 @@
     
     [WXApi registerApp:kWXAppID];
     [WeiboSDK registerApp:kWBAppKey];
+    [[QQActivityHandler defaultHandler] registerApp];
     return YES;
 }
 
@@ -34,6 +36,7 @@
     BOOL ret = NO;
     if ((ret = [[WeixinActivityHandler defaultHandler] openURL:url])){}
     else if ((ret = [[SinaWeiboActivityHandler defaultHandler] openURL:url])){}
+    else if ((ret = [[QQActivityHandler defaultHandler] openURL:url])){};
     return ret;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {

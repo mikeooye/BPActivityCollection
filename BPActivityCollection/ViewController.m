@@ -10,6 +10,7 @@
 #import "WeixinActivity.h"
 #import "SinaWeiboHttpActivity.h"
 #import "SinaWeiboActivity.h"
+#import "QQActivity.h"
 
 @interface ViewController () {
     NSArray *activity;
@@ -27,7 +28,8 @@
     activity = @[[[WeixinSessionActivity alloc] init],
                  [[WeixinTimelineActivity alloc] init],
                  [[SinaWeiboActivity alloc] init],
-                 [[SinaWeiboHttpActivity alloc] init]];
+                 [[SinaWeiboHttpActivity alloc] init],
+                 [[QQActivity alloc] init]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +52,7 @@
     [self presentViewController:activityView animated:YES completion:nil];
     
     UIPopoverPresentationController *popoverVC = [activityView popoverPresentationController];
-    popoverVC.sourceView = sender;
+    popoverVC.barButtonItem = sender;
 }
 
 @end
