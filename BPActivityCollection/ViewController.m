@@ -7,10 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "WeixinActivity.h"
-#import "SinaWeiboHttpActivity.h"
-#import "SinaWeiboActivity.h"
 #import "QQActivity.h"
+
+#import "BPActivityCollection.h"
 
 @interface ViewController () {
     NSArray *activity;

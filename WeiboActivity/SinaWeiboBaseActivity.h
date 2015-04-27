@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "WeiboSDK.h"
+#import "BaseActivity.h"
 
 #define kWBAppKey @"3951331094"
 #define kWBAppSecret @"ba833b7da2d9ca1a5593734c2302af9d"
 #define kWBRedirectURI @"https://api.weibo.com/oauth2/default.html"
 
-@interface SinaWeiboBaseActivity : UIActivity{
+@interface SinaWeiboBaseActivity : BaseActivity{
     
     NSString *title;
     UIImage *image;

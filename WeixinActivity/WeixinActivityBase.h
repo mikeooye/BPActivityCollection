@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "WXApi.h"
+#import "BaseActivity.h"
 
-@interface WeixinActivityBase : UIActivity {
+@interface WeixinActivityBase : BaseActivity {
     NSString *title;
     UIImage *image;
     NSURL *url;

@@ -55,6 +55,7 @@
 		2865E99D1AD6AADF00E86EA0 /* BPToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E99C1AD6AADF00E86EA0 /* BPToast.m */; };
 		2865E9A01AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E99F1AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m */; };
 		2865E9A31AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2865E9A21AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.m */; };
+		F6486EF41AEDDFF200401578 /* BaseActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F6486EF31AEDDFF200401578 /* BaseActivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,9 @@
 		2865E99F1AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboBaseActivity.m; sourceTree = "<group>"; };
 		2865E9A11AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboHttpActivity.h; sourceTree = "<group>"; };
 		2865E9A21AD6B2FE00E86EA0 /* SinaWeiboHttpActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboHttpActivity.m; sourceTree = "<group>"; };
+		F6486EF21AEDDFF200401578 /* BaseActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseActivity.h; sourceTree = "<group>"; };
+		F6486EF31AEDDFF200401578 /* BaseActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseActivity.m; sourceTree = "<group>"; };
+		F6486EF51AEDE01900401578 /* BPActivityCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPActivityCollection.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 		047A7B3F1A9DB137004343E6 = {
 			isa = PBXGroup;
 			children = (
+				F6486EF11AEDDFDA00401578 /* BaseActivity */,
 				04CDB90C1AA4969E00B65843 /* ActivityHandler */,
 				047A7B711A9DB15B004343E6 /* WeiboActivity */,
 				047A7B801A9DB15B004343E6 /* WeixinActivity */,
@@ -366,6 +371,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F6486EF11AEDDFDA00401578 /* BaseActivity */ = {
+			isa = PBXGroup;
+			children = (
+				F6486EF21AEDDFF200401578 /* BaseActivity.h */,
+				F6486EF31AEDDFF200401578 /* BaseActivity.m */,
+				F6486EF51AEDE01900401578 /* BPActivityCollection.h */,
+			);
+			path = BaseActivity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -484,6 +499,7 @@
 				2865E9991AD69F2900E86EA0 /* WBAuthorizeResponse+NSUserDefaults.m in Sources */,
 				281F215E1AD816FA00AE3AFA /* TencentOAuth+NSUserDefaults.m in Sources */,
 				2865E9A01AD6B1FC00E86EA0 /* SinaWeiboBaseActivity.m in Sources */,
+				F6486EF41AEDDFF200401578 /* BaseActivity.m in Sources */,
 				047A7BA31A9DB15B004343E6 /* WeixinSessionActivity.m in Sources */,
 				047A7B541A9DB137004343E6 /* ViewController.m in Sources */,
 				04CDB92A1AA496DE00B65843 /* WeixinActivityHandler.m in Sources */,
@@ -619,7 +635,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QQActivity",
@@ -635,7 +652,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6b40ee35-94f5-4e60-8847-25c42365e6fb";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -643,7 +660,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QQActivity",
@@ -659,7 +677,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bf7db46a-ac60-45df-b914-2a77cf00feaf";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
